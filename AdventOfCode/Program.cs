@@ -1,8 +1,19 @@
 ﻿using AdventOfCode;
 using System.Reflection;
 
-Console.Write("Hello! Please enter a problem number e.g. 202101A: ");
+var defaultProblem = Assembly.GetExecutingAssembly().GetTypes()
+    .Where(n => n.Namespace == "AdventOfCode.Problems" && n.Name.StartsWith("Problem"))
+    .Select(t => t.Name)
+    .OrderByDescending(t => t)
+    .First()
+    .Substring("Problem".Length);
+
+Console.Write($"Hello! Please enter a problem number. Leave blank for {defaultProblem}: ");
 var problemNumber = Console.ReadLine();
+if (string.IsNullOrEmpty(problemNumber))
+{
+    problemNumber = defaultProblem;
+}
 
 var problemType = Type.GetType($"AdventOfCode.Problems.Problem{problemNumber}");
 if (problemType is null)
@@ -14,8 +25,12 @@ if (problemType is null)
 var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream($"AdventOfCode.Data.{problemNumber}.txt");
 if (resource is null)
 {
-    Console.WriteLine("Problem input not found");
-    return;
+    resource = Assembly.GetExecutingAssembly().GetManifestResourceStream($"AdventOfCode.Data.{problemNumber[0..^1]}.txt");
+    if (resource is null)
+    {
+        Console.WriteLine("Problem input not found");
+        return;
+    }
 }
 
 ProblemInput problemInput = new(await new StreamReader(resource).ReadToEndAsync());

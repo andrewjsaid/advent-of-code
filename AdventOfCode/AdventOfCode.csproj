@@ -8,13 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\202101A.txt" />
-    <None Remove="Data\202101B.txt" />
+    <None Remove="Data\202101.txt" />
+    <None Remove="Data\202102.txt" />
+    <None Remove="Data\202103.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Data\202101B.txt" />
-    <EmbeddedResource Include="Data\202101A.txt" />
+    <EmbeddedResource Include="Data\202103.txt" />
+    <EmbeddedResource Include="Data\202102.txt" />
+    <EmbeddedResource Include="Data\202101.txt" />
   </ItemGroup>
 		
 </Project>
