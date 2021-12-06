@@ -26,23 +26,23 @@
                 }
             }
 
-            var gamma = 0;
-            var epsilon = 0;
+            var gamma = new BinaryStringBuilder();
+            var epsilon = new BinaryStringBuilder();
             for (int i = 0; i < zeroCount.Length; i++)
             {
-                gamma *= 2;
-                epsilon *= 2;
                 if (oneCount[i] > zeroCount[i])
                 {
-                    gamma += 1;
+                    gamma.AddOne();
+                    epsilon.AddZero();
                 }
                 else if (oneCount[i] < zeroCount[i])
                 {
-                    epsilon += 1;
+                    gamma.AddZero();
+                    epsilon.AddOne();
                 }
             }
 
-            return (gamma * epsilon).ToString();
+            return (gamma.Build() * epsilon.Build()).ToString();
         }
     }
 }
