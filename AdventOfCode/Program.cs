@@ -33,7 +33,16 @@ if (resource is null)
     }
 }
 
-ProblemInput problemInput = new(await new StreamReader(resource).ReadToEndAsync());
+var lines = new List<string>();
+
+using var stream = new StreamReader(resource);
+string? line;
+while ((line = await stream.ReadLineAsync()) != null)
+{
+    lines.Add(line);
+}
+
+var problemInput = new ProblemInput(lines.ToArray());
 
 string result;
 
