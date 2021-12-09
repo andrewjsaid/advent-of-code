@@ -17,10 +17,12 @@
     <None Remove="Data\202107.txt" />
     <None Remove="Data\202108.txt" />
     <None Remove="Data\Y2015\201501.txt" />
+    <None Remove="Data\Y2021\202109.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Y2015\201501.txt" />
+    <EmbeddedResource Include="Data\Y2021\202109.txt" />
     <EmbeddedResource Include="Data\Y2021\202108.txt" />
     <EmbeddedResource Include="Data\Y2021\202107.txt" />
     <EmbeddedResource Include="Data\Y2021\202106.txt" />
