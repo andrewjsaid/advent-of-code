@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode.Problems.Y2021;
 
-internal class Problem202101A : IProblem
+internal class Problem201501A : IProblem
 {
     public string Solve(ProblemInput input)
     {
