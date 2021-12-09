@@ -19,14 +19,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Data\202108.txt" />
-    <EmbeddedResource Include="Data\202107.txt" />
-    <EmbeddedResource Include="Data\202106.txt" />
-    <EmbeddedResource Include="Data\202105.txt" />
-    <EmbeddedResource Include="Data\202104.txt" />
-    <EmbeddedResource Include="Data\202103.txt" />
-    <EmbeddedResource Include="Data\202102.txt" />
-    <EmbeddedResource Include="Data\202101.txt" />
+    <EmbeddedResource Include="Data\Y2021\202108.txt" />
+    <EmbeddedResource Include="Data\Y2021\202107.txt" />
+    <EmbeddedResource Include="Data\Y2021\202106.txt" />
+    <EmbeddedResource Include="Data\Y2021\202105.txt" />
+    <EmbeddedResource Include="Data\Y2021\202104.txt" />
+    <EmbeddedResource Include="Data\Y2021\202103.txt" />
+    <EmbeddedResource Include="Data\Y2021\202102.txt" />
+    <EmbeddedResource Include="Data\Y2021\202101.txt" />
   </ItemGroup>
 		
 </Project>

@@ -2,7 +2,7 @@
 using System.Reflection;
 
 var defaultProblem = Assembly.GetExecutingAssembly().GetTypes()
-    .Where(n => n.Namespace == "AdventOfCode.Problems" && n.Name.StartsWith("Problem"))
+    .Where(n => n.Namespace?.StartsWith("AdventOfCode.Problems") == true && n.Name.StartsWith("Problem"))
     .Select(t => t.Name)
     .OrderByDescending(t => t)
     .First()
@@ -15,17 +15,17 @@ if (string.IsNullOrEmpty(problemNumber))
     problemNumber = defaultProblem;
 }
 
-var problemType = Type.GetType($"AdventOfCode.Problems.Problem{problemNumber}");
+var problemType = Type.GetType($"AdventOfCode.Problems.Y{problemNumber[0..4]}.Problem{problemNumber}");
 if (problemType is null)
 {
     Console.WriteLine("Problem implementation was not found.");
     return;
 }
 
-var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream($"AdventOfCode.Data.{problemNumber}.txt");
+var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream($"AdventOfCode.Data.Y{problemNumber[0..4]}.{problemNumber}.txt");
 if (resource is null)
 {
-    resource = Assembly.GetExecutingAssembly().GetManifestResourceStream($"AdventOfCode.Data.{problemNumber[0..^1]}.txt");
+    resource = Assembly.GetExecutingAssembly().GetManifestResourceStream($"AdventOfCode.Data.Y{problemNumber[0..4]}.{problemNumber[0..^1]}.txt");
     if (resource is null)
     {
         Console.WriteLine("Problem input not found");
