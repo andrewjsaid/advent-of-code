@@ -11,8 +11,8 @@ internal class Problem202112B : IProblem
         foreach (var line in lines)
         {
             var indexOf = line.IndexOf('-');
-            var left = line.Substring(0, indexOf);
-            var right = line.Substring(indexOf + 1);
+            var left = line[..indexOf];
+            var right = line[(indexOf + 1)..];
 
             if (!edges.TryGetValue(left, out var leftEdges))
             {
