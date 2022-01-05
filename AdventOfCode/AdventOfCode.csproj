@@ -8,24 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\202101.txt" />
-    <None Remove="Data\202102.txt" />
-    <None Remove="Data\202103.txt" />
-    <None Remove="Data\202104.txt" />
-    <None Remove="Data\202105.txt" />
-    <None Remove="Data\202106.txt" />
-    <None Remove="Data\202107.txt" />
-    <None Remove="Data\202108.txt" />
     <None Remove="Data\Y2015\201501.txt" />
     <None Remove="Data\Y2015\201502.txt" />
     <None Remove="Data\Y2015\201503.txt" />
+    <None Remove="Data\Y2021\202101.txt" />
+    <None Remove="Data\Y2021\202102.txt" />
+    <None Remove="Data\Y2021\202103.txt" />
+    <None Remove="Data\Y2021\202104.txt" />
+    <None Remove="Data\Y2021\202105.txt" />
+    <None Remove="Data\Y2021\202106.txt" />
+    <None Remove="Data\Y2021\202107.txt" />
+    <None Remove="Data\Y2021\202108.txt" />
     <None Remove="Data\Y2021\202109.txt" />
+    <None Remove="Data\Y2021\202110.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Y2015\201503.txt" />
     <EmbeddedResource Include="Data\Y2015\201502.txt" />
     <EmbeddedResource Include="Data\Y2015\201501.txt" />
+    <EmbeddedResource Include="Data\Y2021\202110.txt" />
     <EmbeddedResource Include="Data\Y2021\202109.txt" />
     <EmbeddedResource Include="Data\Y2021\202108.txt" />
     <EmbeddedResource Include="Data\Y2021\202107.txt" />
